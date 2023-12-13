@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 const app = express();
@@ -7,19 +6,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const Contact = require("./routes/contact");
+const Book = require("./routes/book.route");
+const Publisher = require("./routes/publishers.route");
+const connectDB = require("./utils/connectdb");
 app.use("/api", Contact);
+app.use("/api", Book);
+app.use("/api/publisher", Publisher);
 
-const connectToDB = async () => {
-  try {
-    await mongoose.connect("mongodb://localhost:27017/calendar");
-    console.log("connected to mongoDB");
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-connectToDB();
-
+connectDB();
 const port = 3000;
 app.listen(port, () => {
   console.log("Server is running");

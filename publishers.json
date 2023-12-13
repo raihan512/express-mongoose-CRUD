@@ -1,0 +1,14 @@
+[
+  {
+    "publishersId": "01maktabatulamzad",
+    "publishersName": ["মাকতাবাতুল আমজাদ", "Maktabatul Amjad", "مكتبة الأمجاد"]
+  },
+  {
+    "publishersId": "02maktabatulashraf",
+    "publishersName": ["মাকতাবাতুল আসলাফ", "Maktabatul Aslaf", "مكتبة الأسلاف"]
+  },
+  {
+    "publishersId": "03maktabatulahsan",
+    "publishersName": ["মাকতাবাতুল আহসান", "Maktabatul Ahsan", "مكتبة الاحسان"]
+  }
+]

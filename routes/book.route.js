@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const Contact = require("../models/contact");
+const Book = require("../models/book.schema");
 
 // Add contact to mongoDB
-router.post("/contact", async (req, res) => {
+router.post("/book", async (req, res) => {
   try {
-    const newContact = new Contact(req.body);
-    await newContact
+    const newBook = new Book(req.body);
+    await newBook
       .save()
-      .then((savedContact) => {
-        console.log(savedContact);
-        res.status(200).json({ msg: "Contact successfully saved" });
+      .then((savedBook) => {
+        console.log(savedBook);
+        res.status(200).json({ msg: "Book successfully saved" });
       })
       .catch((error) => {
         console.log(error);
